@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-SOURCE_ROOT = SCRIPT_DIR / "src" / "client"
+SOURCE_ROOT = SCRIPT_DIR
 OPCODE_PATH = SOURCE_ROOT / "common" / "opcode.proto"
 
 OPCODE_RE = re.compile(
