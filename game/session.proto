@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package msg;
+
+message EnterRequest {
+  bytes login_ticket = 1;
+}
+
+message EnterResponse {
+  int32 error_code = 1;
+  int64 account = 2;
+  int64 player_id = 3;
+  int64 server_time_ms = 4;
+}
+
+message ReadyNotice{
+}
+
+message KickNotice{
+  int32 error_code = 1;
+}

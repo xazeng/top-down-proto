@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package msg;
+
+enum ErrorCode{
+  kEC_Success = 0;
+  kEC_AccountNotFound = 1001;
+  kEC_NoGameServer = 1002;
+  kEC_InvalidLoginTicket = 1003;
+  kEC_LoginInProgress = 1004;
+  kEC_ServerNotReady = 1005;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package msg;
+
+message LoginRequest {
+  int64 account = 1;
+  string credential = 2;
+  string client_version = 3;
+}
+
+message LoginResponse {
+  int32 error_code = 1;
+  string game_host = 2;
+  uint32 game_port = 3;
+  bytes login_ticket = 4;
+  int64 expire_at = 5;
+}
