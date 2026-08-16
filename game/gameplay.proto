@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package msg;
+
+// PVE 客户端上报与服务端广播共用的完整移动状态。
+message PveMovementState {
+  uint32 schema_version = 1;
+  uint32 entity_id = 2;
+  uint32 sequence = 3;
+  uint32 client_tick = 4;
+  sint32 x = 5;
+  sint32 y = 6;
+  sint32 velocity_x = 7;
+  sint32 velocity_y = 8;
+  sint32 velocity_z = 9;
+  uint32 elevation_z = 10;
+  sint32 offset_z = 11;
+  uint32 support_platform_id = 12;
+  sint32 move_x = 13;
+  sint32 move_y = 14;
+}
+
+message PveMovementReport {
+  PveMovementState state = 1;
+}
+
+message PveMovementBroadcast {
+  PveMovementState state = 1;
+  uint64 server_time_ms = 2;
+}

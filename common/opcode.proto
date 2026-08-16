@@ -6,6 +6,9 @@ package msg;
 
 enum Opcode {
   kOpcode_None = 0;
+  kOpcode_GameplayBegin = 500;
+  kOpcode_PveMovementReport = 501;
+  kOpcode_PveMovementBroadcast = 502;
   kOpcode_Begin = 1000;
   kOpcode_LoginRequest = 1001;
   kOpcode_EnterRequest = 1002;
