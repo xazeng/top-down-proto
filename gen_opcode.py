@@ -19,7 +19,7 @@ OPCODE_RE = re.compile(
     re.MULTILINE,
 )
 MESSAGE_RE = re.compile(r"\bmessage\s+([A-Za-z_][A-Za-z0-9_]*)\s*\{")
-PROTOCOL_NAME_RE = re.compile(r".*(?:Request|Response|Notice)$")
+PROTOCOL_NAME_RE = re.compile(r".*(?:Request|Response|Notice|Notify|Broadcast)$")
 
 
 def strip_comments_and_strings(source: str) -> str:

@@ -20,7 +20,7 @@ message PveMovementState {
   sint32 move_y = 14;
 }
 
-message PveMovementReport {
+message PveMovementNotify {
   PveMovementState state = 1;
 }
 

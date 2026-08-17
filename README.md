@@ -4,7 +4,7 @@
 
 ## 生成 Opcode
 
-`gen_opcode.py` 无参数运行。它扫描本目录中的顶层 `Request`、`Response` 和 `Notice` 消息，保留 `common/opcode.proto` 中已有的 Opcode，并为新消息顺序追加编号。
+`gen_opcode.py` 无参数运行。它扫描本目录中的顶层 `Request`、`Response`、`Notice`、`Notify` 和 `Broadcast` 消息，保留 `common/opcode.proto` 中已有的 Opcode，并为新消息顺序追加编号。
 
 ```shell
 python gen_opcode.py
