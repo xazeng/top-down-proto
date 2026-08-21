@@ -17,4 +17,9 @@ enum Opcode {
   kOpcode_KickNotice = 1008;
   kOpcode_PveMovementNotify = 1009;
   kOpcode_PveMovementBroadcast = 1010;
+  kOpcode_PvpInputNotify = 1011;
+  kOpcode_PvpInputFrameBroadcast = 1012;
+  kOpcode_PvpMatchStartNotice = 1013;
+  kOpcode_PveActionNotify = 1014;
+  kOpcode_PveActionBroadcast = 1015;
 }

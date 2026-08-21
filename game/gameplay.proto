@@ -28,3 +28,61 @@ message PveMovementBroadcast {
   PveMovementState state = 1;
   uint64 server_time_ms = 2;
 }
+
+message PveActionEvent {
+  uint32 schema_version = 1;
+  uint32 entity_id = 2;
+  uint32 sequence = 3;
+  uint32 client_tick = 4;
+  uint32 ability_id = 5;
+}
+
+message PveActionNotify {
+  PveActionEvent event = 1;
+}
+
+message PveActionBroadcast {
+  PveActionEvent event = 1;
+  uint64 server_time_ms = 2;
+}
+
+message GameplayCommand {
+  uint32 entity_id = 1;
+  uint32 command_type = 2;
+  sint32 move_x = 3;
+  sint32 move_y = 4;
+  uint32 ability_id = 5;
+  sint32 direction_x = 6;
+  sint32 direction_y = 7;
+}
+
+message PvpInputSubmission {
+  uint32 schema_version = 1;
+  uint32 player_id = 2;
+  uint32 sequence = 3;
+  uint32 target_tick = 4;
+  repeated GameplayCommand commands = 5;
+}
+
+message PvpInputNotify {
+  PvpInputSubmission submission = 1;
+}
+
+message PvpInputFrame {
+  uint32 schema_version = 1;
+  uint32 tick = 2;
+  repeated GameplayCommand commands = 3;
+}
+
+message PvpInputFrameBroadcast {
+  PvpInputFrame frame = 1;
+}
+
+message PvpMatchStartNotice {
+  uint32 tick_rate = 1;
+  uint32 input_delay_ticks = 2;
+  uint32 target_buffer_ticks = 3;
+  string map_id = 4;
+  string config_version = 5;
+  uint32 initial_state_hash = 6;
+}

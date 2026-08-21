@@ -30,6 +30,8 @@ python gen_lua.py --schema ../../../assets/pb/msg.pb --output-dir ../../../src/m
 
 主工程统一通过 `tools/pb/build.py` 按“生成 Opcode、编译 PB、生成 Lua”的顺序调用这些脚本：
 
+入口启动子脚本时优先使用当前 `CONDA_PREFIX` 中的 Python，其次使用 `PATH` 中的 `python`，最后才回退到启动入口自身的解释器。需要 `grpcio-tools` 的环境必须先完成 Conda 激活。
+
 ```shell
 D:\app\anaconda3\envs\main\python.exe tools\pb\build.py
 ```
